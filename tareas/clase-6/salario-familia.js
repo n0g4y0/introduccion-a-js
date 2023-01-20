@@ -24,7 +24,7 @@ document.querySelector("#resetear").onclick = resetear;
 
 function resetear(){
 
-  borrarIntegrantesAnteriores();
+  borrarUltimoIntegrante();
   ocultarResultados();
   ocultarBotonCalculo();
 
@@ -39,7 +39,6 @@ document.querySelector("#boton-quitar").onclick = function(){
 
   function borrarUltimoIntegrante() {
     const $integrantes = document.querySelectorAll('.integrante');
-    console.log($integrantes);
     $integrantes[$integrantes.length - 1].remove();
   }
 
