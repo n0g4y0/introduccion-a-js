@@ -4,6 +4,7 @@ document.querySelector("#siguiente-paso").onclick = function(){
     const cantidadIntegrantes = Number($cantidadIntegrantes.value);
 
     borrarIntegrantesAnteriores();
+    mostrarElemento('menu');
 
     crearIntegrantes(cantidadIntegrantes);
 
@@ -53,10 +54,10 @@ function crearIntegrantes(cantidadIntegrantes) {
 
 
   function mostrarElemento(nombreElemento) {
-    document.querySelector(`#${nombreElemento}`).className = '';
+    document.querySelector(`#${nombreElemento}`).classList.remove("oculto");
   }
   function ocultarElemento(nombreElemento) {
-    document.querySelector(`#${nombreElemento}`).className = 'oculto';
+    document.querySelector(`#${nombreElemento}`).classList.add("oculto");
   }
 
   function ocultarResultados() {
@@ -80,6 +81,7 @@ function crearIntegrantes(cantidadIntegrantes) {
     $label.textContent = `Edad del integrante #${indice + 1}: `;
     const $input = document.createElement('input');
     $input.type = 'number';
+    $input.classList.add(`member-${indice + 1}`);
   
     
     $integrante.appendChild($label);
